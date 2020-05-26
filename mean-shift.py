@@ -1,9 +1,7 @@
- 
 from sklearn.cluster import MeanShift
 import numpy as np
 import matplotlib.pyplot as plt
 
-colorCount = 0
 def Cluster(BW, arr):
     if(len(arr) == 1):
         return 0
@@ -16,13 +14,14 @@ def Cluster(BW, arr):
         ArrOfArr.append(clustering.cluster_centers_)
         Cluster(BW,clustering.cluster_centers_)
     
-def PlotFun(lists, labels = None, Origin = None):
+def PlotFun(lists, labels = None, Origin = None, pointColor="blue"):
     print(lists)
     print("========================")
-    global colorCount 
+    if len(lists) == 1:
+        pointColor = "red" 
     x = lists[:,0:1]
     y = lists[:,1:2]
-    plt.plot(x,y,'o',color=Colors[colorCount])
+    plt.plot(x,y,'o',color=pointColor)
 
 
     if(labels is not None):
@@ -30,22 +29,20 @@ def PlotFun(lists, labels = None, Origin = None):
         for i in labels:
             x = [lists[i][0], Origin[count][0]]
             y = [lists[i][1], Origin[count][1]]
-            plt.plot(x, y, color = Colors[colorCount])
+            plt.plot(x, y, color = "black")
             count = count + 1
 
-    
-    colorCount = colorCount+1
-    if(colorCount == len(Colors)):
-        colorCount = 0
+
+    # plt.show()
 
 if _name_ == "_main_":
     ArrOfArr = []
-    Input = np.array([[3, 5], [2, 3]  ,[-5, -5],[-5, -3]  ,[-3, 5], [-2, 3],  [5, -5], [5, -3],[2, 2], [2, -2],[-2, 2], [-2, -2]])
-    Colors = ["green", "red", "blue", "black", "yellow", "orange"]
+    Input = np.array([[3, 5], [2, 3]  ,[-5, -5],[-5, -3]  ,[-3, 5], [-2, 3],  [1, -5], [3, -3],[2, 2],[-2, 2]])
+    Colors = ["green", "red", "blue", "black", "yellow", "orange" , "Aqua", "Medium Gray", "Navy Blue"]
     
-    PlotFun(Input)
 
     # exit()
 
     Cluster(2,Input)
+    PlotFun(Input,pointColor = "green")
     plt.show()
