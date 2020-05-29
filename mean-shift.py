@@ -38,6 +38,7 @@ def PlotFun(lists, labels = None, Origin = None, pointColor="blue"):
 
     # plt.show()
 
+
 def getorigin(eventorigin):    
       print("orign")
       x = eventorigin.x
@@ -46,7 +47,6 @@ def getorigin(eventorigin):
       canavas.create_oval(x, y, x, y, width = 10, fill = 'blue')    
       Input.append([x,700-y])
       
-    
 
 def savePoints():
     print("save")   
