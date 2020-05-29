@@ -35,9 +35,9 @@ def PlotFun(lists, labels = None, Origin = None, pointColor="blue"):
 
     # plt.show()
 
-if _name_ == "_main_":
+if __name__ == "_main_":
     ArrOfArr = []
-    Input = np.array([[3, 5], [2, 3]  ,[-5, -5],[-5, -3]  ,[-3, 5], [-2, 3],  [1, -5], [3, -3],[2, 2],[-2, 2]])
+    Input = np.array([[0, 5], [-5, 0]  ,[5, 0]])
     Colors = ["green", "red", "blue", "black", "yellow", "orange" , "Aqua", "Medium Gray", "Navy Blue"]
     
 

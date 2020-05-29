@@ -38,11 +38,13 @@ def PlotFun(lists, labels = None, Origin = None, pointColor="blue"):
     # plt.show()
 
 if __name__ == "__main__":
+    f = open('input.json',)
+    data = json.load(f)
+
     ArrOfArr = []
     Colors = ["green", "red", "blue", "black", "yellow", "orange" , "Aqua", "Medium Gray", "Navy Blue"]
-    f = open('input.json',)
-    data = json.load(f) 
-    Input = np.array(data["Input1"])
+    # Input = np.array(data["Input1"])
+    Input = np.array([[-5,0],[5,0],[0,5]])
     
 
     Cluster(2,Input)
