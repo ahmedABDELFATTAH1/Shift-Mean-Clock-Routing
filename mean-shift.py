@@ -18,8 +18,8 @@ def Cluster(BW, arr):
         Cluster(BW,clustering.cluster_centers_)
     
 def PlotFun(lists, labels = None, Origin = None, pointColor="blue"):
-    print(lists)
-    print("========================")
+    # print(lists)
+    # print("========================")
     if len(lists) == 1:
         pointColor = "red" 
     x = lists[:,0:1]
