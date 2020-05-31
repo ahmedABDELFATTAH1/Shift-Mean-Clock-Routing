@@ -14,7 +14,7 @@ def Cluster(BW, arr):
     else:
         PlotFun(clustering.cluster_centers_,clustering.labels_,arr)
         ArrOfArr.append(clustering.cluster_centers_)
-        Cluster(BW,clustering.cluster_centers_)
+        Cluster(2,clustering.cluster_centers_)
     
 def PlotFun(lists, labels = None, Origin = None, pointColor="blue"):
     print(lists)
